@@ -4,11 +4,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
-        <title>NAAM</title>
+        <title>MooFood</title>
     </head>
     <body>
         <header class="container">
+            <a href="#banner" class="visualyHidden">skip to main content</a>
+
             <a href="">LOGO </a>
+            <button aria-expanded="false" class="hamburger" id="menu">
+                <span aria-hidden="true" class="icon">
+                    <span></span><span></span><span></span>
+                </span>
+                <span>Menu</span>
+            </button>
             <nav>
                 <ul>
                     <li><a href="./">Home</a></li>
@@ -20,28 +28,149 @@
         </header>
 
         <main class="container">
-            <section class="banner"> 
-                <div>
-                    <h1>NAAM</h1>
-                    <p>Onze app zorgt voor een versnelling van 15% bij het process van kalfjes voederen
+            <section class="banner">
+                <div class="main content">
+                    <h1>MooFood</h1>
+                    <p>
+                        Onze app zorgt voor een versnelling van 15% bij het
+                        process van kalfjes voederen
                     </p>
-                    <button>Probeer het hier Gratis</button>
+                    <button class="trial">Probeer het hier Gratis</button>
                 </div>
-                <div></div>
+                <div class="side content">
+                    <ul>
+                        <li><h2>Voeg makkelijk kalven toe</h2></li>
+                        <li><h2>Zie hoe oud de kalven zijn</h2></li>
+                        <li><h2>Voeg uw eigen voederschema toe</h2></li>
+                        <li><h2>Zie hoeveen melk u moet maken</h2></li>
+                    </ul>
+                </div>
             </section>
 
             <section class="features">
-
+                <h2>Wat doen we?</h2>
+                <ul>
+                    <li>
+                        <h3>Account</h3>
+                        <p>
+                            Maak gemakkelijk een account aan per boerderij aan
+                            de hand van uw KBO nummer. Zo kunnen er meerdere
+                            mensen op het account van uw bedrijf zonder
+                            gevoelige informatie zoals uw itsme te moeten delen.
+                        </p>
+                        <figure>
+                            <img src="" alt="registreer pagina" />
+                        </figure>
+                    </li>
+                    <li>
+                        <h3>Voeder schema</h3>
+                        <p>
+                            Beslis zelf hoeveel keer uw kalfven gevoederd moeten
+                            worden op basis van leeftijd. Zo kunt u alles
+                            peronaliseren en toch nog gemakkelijk bijhouden
+                            hoeveel liter melk u elke dag hoeft te maken
+                        </p>
+                        <figure>
+                            <img src="" alt="voedings schema pagina" />
+                        </figure>
+                    </li>
+                    <li>
+                        <h3>Kalven</h3>
+                        <p>
+                            Voeg uw kalven simpel toe en hou ze gemakkelijk per
+                            leeftijdsgroep bij. Voer de geboortedatum en het
+                            oornummer in en de rest doen wij. Wij houden bij in
+                            welke groep uw kalven zitten en wij geven u een
+                            notificatie als er een kalf van hok moet veranderd
+                            worden
+                        </p>
+                        <figure>
+                            <img src="" alt="kalven lijsten pagina" />
+                        </figure>
+                    </li>
+                    <li>
+                        <h3>Home</h3>
+                        <p>
+                            Krijg een overzicht van hoeveel melk u moet maken
+                            voor de voormiddag en de avond als u de app opent.
+                            Zie ook onmiddelijk welke groepen gevoederd moeten
+                            worden op dat moment. Krijg ook onmiddlijk de optie
+                            om te zien hoeveel melk u andere dagen moet maken
+                            door onze kalender functie. Do houdt u gemakkelijk
+                            bij hoeveel melk u vorige week hebt moeten maken
+                        </p>
+                        <figure>
+                            <img src="" alt="voedings schema pagina" />
+                        </figure>
+                    </li>
+                </ul>
+                <button class="trial">Probeer het hier Gratis</button>
             </section>
 
             <section class="aboutUs">
-
+                <h2>Wie zijn we?</h2>
+                <p>
+                    wij zijn vier studenten op de co-hogeschool Odisee. Wij
+                    hebben als opdracht gekregen om de boeren te proberen helpen
+                    met hun administratieve last doormiddel van een app. Door in
+                    gesprek te gaan met verschillende boeren zijn wij op het
+                    idee gekomen om boeren te helpen met het bijhouden van de
+                    hoeveelheid melk ze moeten maken. Na veel herwerken zijn we
+                    uiteindelijk met deze app geëindigd. En we zijn nog steeds
+                    niet klaar! We blijven werken aan nieuwe features die we
+                    eraan toe kunnen voegen.
+                </p>
+                <ul>
+                    <li>
+                        <h3>Art Van der Vennet</h3>
+                        <p>1ste jaar ICT-elektronica</p>
+                        <ul>
+                            <li><a href="">linkedin</a></li>
+                            <li><a href="">facebook</a></li>
+                        </ul>
+                        <figure>
+                            <img src="" alt="foto van Art" />
+                        </figure>
+                    </li>
+                    <li>
+                        <h3>Jente De Feyter</h3>
+                        <p>1ste jaar ICT-elektronica</p>
+                        <ul>
+                            <li><a href="">linkedin</a></li>
+                            <li><a href="">facebook</a></li>
+                        </ul>
+                        <figure>
+                            <img src="" alt="foto van Jente" />
+                        </figure>
+                    </li>
+                    <li>
+                        <h3>Benten Vermeersch</h3>
+                        <p>1ste jaar ICT-elektronica</p>
+                        <ul>
+                            <li><a href="">linkedin</a></li>
+                            <li><a href="">facebook</a></li>
+                        </ul>
+                        <figure>
+                            <img src="" alt="foto van Beneten" />
+                        </figure>
+                    </li>
+                    <li>
+                        <h3>Eryk Lewandowski</h3>
+                        <p>1ste jaar ICT-elektronica</p>
+                        <ul>
+                            <li><a href="">linkedin</a></li>
+                            <li><a href="">facebook</a></li>
+                        </ul>
+                        <figure>
+                            <img src="" alt="foto van Eryk" />
+                        </figure>
+                    </li>
+                </ul>
             </section>
+
+            
         </main>
 
-
-        <footer class="container">
-
-        </footer>
+        <footer class="container"></footer>
     </body>
 </html>
