@@ -1,0 +1,49 @@
+/* ROOT */
+
+:root {
+    --white: #f4f6f6;
+    --black: #010111;
+    --primary: var(--black);
+    --bg: var(--white);
+    --accent: green
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: var(--white);
+        --bg: var(--black);
+    }
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--bg);
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--primary);
+}
+
+/* UTILITY CLASSES, ATOMS...*/
+
+figure,
+body {
+    margin: 0;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 clamp(1rem, 8vw, 4rem);
+}
+
+p {
+    max-width: 40rem;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: dotted var(--primary);
+}
