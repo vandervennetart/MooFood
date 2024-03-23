@@ -5,7 +5,7 @@
     --black: #010111;
     --primary: var(--black);
     --bg: var(--white);
-    --accent: green
+    --accent: #37C32B;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,4 +46,33 @@ p {
 a:focus-visible,
 button:focus-visible {
     outline: dotted var(--primary);
+}
+
+.visualyHidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+
+/* header */
+
+header {
+    padding: 2rem 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+nav ul {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
 }
