@@ -92,19 +92,6 @@ header {
     position: relative;
 }
 
-header::before {
-    display: block;
-    content: "";
-    background-color: inherit;
-
-    width: 100dvw;
-    height: 100%;
-    position: absolute;
-
-    top: 0;
-    left: -1rem;
-}
-
 header .content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
