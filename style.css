@@ -23,7 +23,7 @@
 
 html {
     background-color: var(--bg);
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: var(--primary);
 }
 
@@ -57,7 +57,6 @@ a {
 
 ul {
     list-style: none;
-    padding: 0;
 }
 
 img {
@@ -87,6 +86,8 @@ header .logo {
 
 header {
     margin-bottom: 1rem;
+
+    margin-inline: -1rem;
     background-color: var(--accent);
     padding: 1rem 0;
     position: relative;
@@ -95,7 +96,7 @@ header {
 header .content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    align-items: baseline;
+    align-items: center;
 }
 
 .hamburger {
@@ -105,14 +106,18 @@ header .content {
     border: none;
     color: var(--primary);
 
-    position: relative;
+    display: grid;
+    grid-template-columns: 20px 4em;
+    align-items: center;
+}
+
+.hamburger > span:last-child{
+    grid-column: 2;
 }
 
 .hamburger .icon {
-    position: absolute;
     display: grid;
-    right: 3.5em;
-    top: -0.15em;
+    grid-column: 1;
 }
 
 .hamburger .icon > span {
@@ -164,7 +169,6 @@ header a {
 
 header .content ul {
     margin: 0;
-    padding: 0;
 }
 
 header .content li {
@@ -189,6 +193,10 @@ header .content a:not(.logo)::after {
 }
 
 /* banner */
+.banner li{
+    display: grid;
+    align-items: center;
+}
 
 .banner {
     display: grid;
@@ -210,11 +218,14 @@ header .content a:not(.logo)::after {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    column-gap : 1em;
+}
+
+.banner ul {
+    padding: 0;
 }
 
 /* features */
-
-
 
 /* animation */
 
