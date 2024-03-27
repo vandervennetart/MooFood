@@ -5,15 +5,8 @@
     --black: #010111;
     --primary: var(--black);
     --bg: var(--white);
-    --accent: #13D0C5;
-    --accent2: #965320
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --primary: var(--white);
-        --bg: var(--black);
-    }
+    --accent: #13d0c5;
+    --accent2: #965320;
 }
 
 *,
@@ -52,7 +45,8 @@ body {
 .container {
     max-width: 80rem;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
+    position: relative;
 }
 
 p {
@@ -82,6 +76,11 @@ button {
     z-index: 2;
 }
 
+img{
+    width: 100%;
+    aspect-ratio: 8/5;
+}
+
 /* header */
 
 header .logo {
@@ -89,7 +88,7 @@ header .logo {
     position: relative;
 }
 
-.logo object{
+.logo object {
     width: 100%;
 }
 
@@ -105,13 +104,12 @@ header .logo {
 
 header {
     margin-bottom: 1rem;
-    margin-inline: -1rem;
-
+    margin-inline: -2rem;
 
     background-color: var(--bg);
     padding: 1rem;
     position: fixed;
-    max-width: 80rem;
+    width: 100%;
     z-index: 2;
 
     box-shadow: 0 2px 5px -2px var(--primary);
@@ -230,23 +228,20 @@ header .content a:not(.logo)::after {
     align-items: center;
     position: relative;
 
-    
-
     text-align: center;
 }
 
-.banner::before{
-
+.banner::before {
     position: absolute;
     z-index: -1;
     top: 0;
 
     content: "";
     display: block;
-    width: calc(100% + 2rem);
+    width: calc(100% + 4rem);
     height: 80%;
 
-    left: -1rem;
+    left: -2rem;
     background-color: var(--accent);
 }
 
@@ -268,16 +263,16 @@ header .content a:not(.logo)::after {
     position: relative;
 }
 
-.banner .side::before{
+.banner .side::before {
     position: absolute;
     z-index: -1;
 
     content: "";
     display: block;
-    width: calc(100% + 4rem);
+    width: calc(100% + 8rem);
     height: 100%;
 
-    left: -2rem;
+    left: -4rem;
     background-color: var(--accent2);
 }
 
@@ -287,8 +282,57 @@ header .content a:not(.logo)::after {
 
 /* features */
 
-li{
-    display: flex;
+.features ul {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+
+    li {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        align-items: center;
+    }
+
+    figure {
+        display: grid;
+        align-items: center;
+    }
+}
+
+.aboutUs > ul {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+
+    &>li {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 0.2fr)  1fr 0.5fr;
+
+        h3{
+            grid-column: span 2;
+            grid-row: 1;
+        }
+
+        p{
+            grid-column: span 2;
+            grid-row: 2;
+        }
+
+        figure{
+            grid-column: span 2;
+            grid-row: 3;
+        }
+
+        ul{
+            grid-row: 4;
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+    }
 }
 
 /* animation */
