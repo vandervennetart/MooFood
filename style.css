@@ -287,6 +287,10 @@ header .content a:not(.logo)::after {
 
 /* features */
 
+li{
+    display: flex;
+}
+
 /* animation */
 
 @keyframes menuDown {
