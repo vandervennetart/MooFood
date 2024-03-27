@@ -5,7 +5,8 @@
     --black: #010111;
     --primary: var(--black);
     --bg: var(--white);
-    --accent: #83e0bc;
+    --accent: #13D0C5;
+    --accent2: #965320
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +26,7 @@ html {
     background-color: var(--bg);
     font-family: "Montserrat", sans-serif;
     color: var(--primary);
+    scroll-behavior: smooth;
 }
 
 /* UTILITY CLASSES, ATOMS...*/
@@ -74,6 +76,10 @@ header .logo {
     grid-column: span 2;
 }
 
+.logo object{
+    width: 100%;
+}
+
 .visualyHidden:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -86,11 +92,16 @@ header .logo {
 
 header {
     margin-bottom: 1rem;
-
     margin-inline: -1rem;
-    background-color: var(--accent);
-    padding: 1rem 0;
-    position: relative;
+
+
+    background-color: var(--bg);
+    padding: 1rem;
+    position: fixed;
+    max-width: 80rem;
+    z-index: 2;
+
+    box-shadow: 0 2px 5px -2px var(--primary);
 }
 
 header .content {
@@ -111,7 +122,7 @@ header .content {
     align-items: center;
 }
 
-.hamburger > span:last-child{
+.hamburger > span:last-child {
     grid-column: 2;
 }
 
@@ -193,7 +204,7 @@ header .content a:not(.logo)::after {
 }
 
 /* banner */
-.banner li{
+.banner li {
     display: grid;
     align-items: center;
 }
@@ -204,21 +215,57 @@ header .content a:not(.logo)::after {
     grid-template-rows: repeat(2, 1fr);
     padding: 1rem;
     align-items: center;
+    position: relative;
+
+    
 
     text-align: center;
 }
 
+.banner::before{
+
+    position: absolute;
+    z-index: -1;
+    top: 0;
+
+    content: "";
+    display: block;
+    width: calc(100% + 2rem);
+    height: 80%;
+
+    left: -1rem;
+    background-color: var(--accent);
+}
+
 .banner .main {
     grid-column: span 12;
+    grid-row: 2;
+    display: grid;
+    justify-items: center;
+    min-height: 13rem;
 }
 
 .banner .side {
-    grid-row: 2;
+    grid-row: 3;
     grid-column: span 12;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    column-gap : 1em;
+    column-gap: 1em;
+    position: relative;
+}
+
+.banner .side::before{
+    position: absolute;
+    z-index: -1;
+
+    content: "";
+    display: block;
+    width: calc(100% + 4rem);
+    height: 100%;
+
+    left: -2rem;
+    background-color: var(--accent2);
 }
 
 .banner ul {
