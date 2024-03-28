@@ -60,16 +60,12 @@ a {
 ul {
     list-style: none;
 }
-img {
-    object-fit: cover;
-    width: 100%;
-}
+
 button {
     z-index: 2;
 }
 img {
     width: 100%;
-    aspect-ratio: 8/5;
 }
 
 /* header */
@@ -100,6 +96,7 @@ header {
     width: 100vw;
     max-width: 80rem;
     z-index: 2;
+    max-height: 4rem;
 
     box-shadow: 0 2px 5px -2px var(--primary);
 }
@@ -189,26 +186,26 @@ nav {
 }
 
 /* banner */
-.banner li {
-    display: grid;
-    align-items: center;
-}
+
 .banner {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     padding: 1rem;
     align-items: end;
     position: relative;
-
+    padding-top: 4rem;
     height: 100%;
 
     text-align: center;
 }
-
+.banner li {
+    display: grid;
+    align-items: center;
+}
 .banner .main {
     grid-column: span 12;
-    grid-row: 2;
+    grid-row: 1;
     display: flex;
     font-size: xx-large;
     justify-items: center;
@@ -218,7 +215,7 @@ nav {
 }
 .banner .side {
     height: 80%;
-    grid-row: 3;
+    grid-row: 2;
     grid-column: span 12;
     display: flex;
     position: relative;
@@ -247,7 +244,7 @@ nav {
     content: "";
     display: block;
     width: calc(100% + 4rem);
-    height: 30%;
+    height: calc((100% - 5rem) / 2);
 
     left: -2rem;
     background-color: var(--accent2);
@@ -320,6 +317,10 @@ nav {
             gap: 1rem;
         }
     }
+
+    img {
+        aspect-ratio: 5/5;
+    }
 }
 
 .trial {
@@ -347,7 +348,7 @@ footer {
     position: relative;
     padding-block: 1rem 2rem;
     li {
-        overflow: auto;
+        overflow: scroll;
     }
     ul {
         padding: 0;
