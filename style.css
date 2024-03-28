@@ -304,6 +304,7 @@ header .content a:not(.logo)::after {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     gap: 1rem;
+    
 
     &>li {
         display: grid;
@@ -334,6 +335,29 @@ header .content a:not(.logo)::after {
         }
     }
 }
+
+
+
+
+/* footer */
+footer{
+    position: relative;
+    padding-block: 1rem 2rem;
+}
+footer::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+
+    content: "";
+    display: block;
+    width: calc(100% + 4rem);
+    height: 100%;
+
+    left: -2rem;
+    background-color: var(--accent);
+}
+
 
 /* animation */
 
