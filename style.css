@@ -35,47 +35,38 @@ html {
     white-space: nowrap;
     z-index: 2;
 }
-
 figure,
 body {
     margin: 0;
     position: relative;
 }
-
 .container {
     max-width: 80rem;
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
 }
-
 p {
     max-width: 40rem;
 }
-
 a:focus-visible,
 button:focus-visible {
     outline: dotted var(--primary);
 }
-
 a {
     text-decoration: none;
     color: var(--primary);
 }
-
 ul {
     list-style: none;
 }
-
 img {
     object-fit: cover;
     width: 100%;
 }
-
 button {
     z-index: 2;
 }
-
 img {
     width: 100%;
     aspect-ratio: 8/5;
@@ -84,14 +75,12 @@ img {
 /* header */
 
 header .logo {
-    grid-column: span 4;
+    grid-column: 1 / 8;
     position: relative;
 }
-
 .logo object {
     width: 100%;
 }
-
 .visualyHidden:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -101,7 +90,6 @@ header .logo {
     white-space: nowrap;
     width: 1px;
 }
-
 header {
     margin-bottom: 1rem;
     margin-inline: -2rem;
@@ -109,16 +97,44 @@ header {
     background-color: var(--bg);
     padding: 1rem;
     position: fixed;
-    width: 100%;
+    width: 100vw;
+    max-width: 80rem;
     z-index: 2;
 
     box-shadow: 0 2px 5px -2px var(--primary);
 }
-
 header .content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
+}
+header a {
+    color: inherit;
+    text-decoration: none;
+}
+header .content ul {
+    margin: 0;
+}
+header .content li {
+    position: relative;
+    padding: 0.25rem 0;
+    margin: 0.5rem 0;
+}
+header .content a:not(.logo)::after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    background-color: var(--primary);
+    bottom: -0.25rem;
+    left: 0;
+}
+nav a {
+    display: block;
+    position: relative;
+}
+nav {
+    grid-column: span 12;
 }
 
 .hamburger {
@@ -132,16 +148,13 @@ header .content {
     grid-template-columns: 20px 4em;
     align-items: center;
 }
-
 .hamburger > span:last-child {
     grid-column: 2;
 }
-
 .hamburger .icon {
     display: grid;
     grid-column: 1;
 }
-
 .hamburger .icon > span {
     width: 20px;
     height: 2px;
@@ -149,30 +162,25 @@ header .content {
     background-color: var(--primary);
     transition: transform 0.2s ease-in-out;
 }
-
 .hamburger[aria-expanded="true"] .icon > span:nth-child(1) {
     transform: rotate(45deg) translateX(4px);
 }
 .hamburger[aria-expanded="true"] .icon > span:nth-child(3) {
     transform: rotate(-45deg) translateX(4px);
 }
-
 .hamburger[aria-expanded="true"] .icon > span:nth-child(2) {
     display: none;
 }
-
 .hamburger + nav {
     width: 100%;
     padding-top: 1rem;
 }
-
 .hamburger[aria-expanded="true"] + nav {
     display: block;
     animation: menuDown;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
-
 .hamburger[aria-expanded="false"] + nav {
     display: block;
     animation: menuUp;
@@ -180,57 +188,45 @@ header .content {
     animation-fill-mode: forwards;
 }
 
-nav {
-    grid-column: span 12;
-}
-
-header a {
-    color: inherit;
-    text-decoration: none;
-}
-
-header .content ul {
-    margin: 0;
-}
-
-header .content li {
-    position: relative;
-    padding: 0.25rem 0;
-    margin: 0.5rem 0;
-}
-
-nav a {
-    display: block;
-    position: relative;
-}
-
-header .content a:not(.logo)::after {
-    content: "";
-    position: absolute;
-    width: 30%;
-    height: 1px;
-    background-color: var(--primary);
-    bottom: -0.25rem;
-    left: 0;
-}
-
 /* banner */
 .banner li {
     display: grid;
     align-items: center;
 }
-
 .banner {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     padding: 1rem;
-    align-items: center;
+    align-items: end;
     position: relative;
+
+    height: 100%;
 
     text-align: center;
 }
 
+.banner .main {
+    grid-column: span 12;
+    grid-row: 2;
+    display: flex;
+    font-size: xx-large;
+    justify-items: center;
+    min-height: 13rem;
+    flex-direction: column;
+    align-items: center;
+}
+.banner .side {
+    height: 80%;
+    grid-row: 3;
+    grid-column: span 12;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
 .banner::before {
     position: absolute;
     z-index: -1;
@@ -244,43 +240,32 @@ header .content a:not(.logo)::after {
     left: -2rem;
     background-color: var(--accent);
 }
-
-.banner .main {
-    grid-column: span 12;
-    grid-row: 2;
-    display: grid;
-    justify-items: center;
-    min-height: 13rem;
-}
-
-.banner .side {
-    grid-row: 3;
-    grid-column: span 12;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 1em;
-    position: relative;
-}
-
-.banner .side::before {
+.banner::after {
     position: absolute;
     z-index: -1;
 
     content: "";
     display: block;
-    width: calc(100% + 7rem);
-    height: 100%;
+    width: calc(100% + 4rem);
+    height: 30%;
 
-    left: -4rem;
+    left: -2rem;
     background-color: var(--accent2);
 }
-
 .banner ul {
     padding: 0;
 }
 
-/* features */
+/* main */
+.tryForFree {
+    display: block;
+    text-align: center;
+    font-size: xx-large;
+    padding: 1rem 2rem;
+
+    background-color: var(--accent);
+    border-radius: 20px;
+}
 
 .features ul {
     display: grid;
@@ -357,20 +342,11 @@ header .content a:not(.logo)::after {
     }
 }
 
-.tryForFree {
-    display: block;
-    text-align: center;
-    font-size: xx-large;
-    padding: 1rem 2rem;
-
-    background-color: var(--accent);
-    border-radius: 20px;
-}
-
 /* footer */
 footer {
     position: relative;
     padding-block: 1rem 2rem;
+    overflow: auto;
 }
 footer::before {
     position: absolute;
