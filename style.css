@@ -418,7 +418,7 @@ footer::before {
     header,
     main,
     footer {
-        overflow: scroll;
+        overflow: visible;
     }
 }
 
