@@ -325,10 +325,13 @@ nav {
 
 .trial {
     margin-bottom: 4rem;
+    border: var(--accent2) dotted 2px;
+    padding: 1rem;
+    display: grid;
+    justify-items: center;
     form div {
         display: grid;
         grid-template-rows: 1fr 1fr;
-
         margin-block: 1rem;
     }
     input {
@@ -418,7 +421,6 @@ footer::before {
     footer ul {
         overflow: scroll;
     }
-
 }
 
 @media (min-width: 46.875rem) {
