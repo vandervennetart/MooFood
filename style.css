@@ -415,11 +415,10 @@ footer::before {
 
 /* breakpoints */
 @media (max-width: 23rem) {
-    header,
-    main,
-    footer {
-        overflow: visible;
+    footer ul {
+        overflow: scroll;
     }
+
 }
 
 @media (min-width: 46.875rem) {
